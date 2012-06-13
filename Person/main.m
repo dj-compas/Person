@@ -28,6 +28,17 @@ int main(int argc, char *argv[])
 	Person *anon = [[Person alloc] init];
 	NSLog(@"Anonymous's name and are are: %@ and %d.", [anon name], [anon age]);
 	
+	// call the 'description' method from all previously instansiated classes
+	NSLog(@"desc of me: %@", [me description]);
+	NSLog(@"desc of random: %@", [random description]);
+	NSLog(@"desc of anon: %@", [anon description]);
+	
+	// call the class method; not tied to any specific instance of the class
+		// - trying to use an instance of the class in place of the class name itself (i.e.: 'me' instead of 'Person'), will result in an error
+	NSLog(@"%@", [Person vitalOrgan:@"brain"]);
+	
+	[Person sleep];
+	
 	@autoreleasepool {
 	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([PersonAppDelegate class]));
 	}

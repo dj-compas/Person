@@ -10,7 +10,10 @@
 
 @interface Person : NSObject
 {
-	int age;
+	// instance variables go here!!
+		// - it seems they can be share the same names as properties
+	//int age;
+	
 }
 
 // ^^ - curly braces not used above; perhaps it's not necessary to pre-define variables as long as property and synthesise are used
@@ -30,5 +33,9 @@
 - (id) initWithName: (NSString *) n age: (int) a;
 
 - (void) setAge:(int)age;
+
+// define a class method (not an instance method like above)
++ (NSString *) vitalOrgan: (NSString *) organ;
++ (void) sleep;
 
 @end

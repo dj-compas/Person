@@ -34,17 +34,32 @@
 	return self;
 }
 
+// i guess it is what it is...
+	// I don't see the purpose of this other than perhaps an over-glorified console log function, but whatever...
+- (NSString *) description
+{
+	return [NSString stringWithFormat: @"This is a person class. Name: %@, Age: %d", name, age];
+}
+
 - (void) setAge:(int)a
 {
 	if (a < 30)
 	{
 		NSLog(@"You're not 30 yet, %@!", name);
-		
 	}
 	
 	age = a;
-	
 	return;
+}
+
++ (NSString *) vitalOrgan:(NSString *)organ
+{
+	return [NSString stringWithFormat:@"Hey, your vital organ is %@", organ];
+}
+
++ (void) sleep
+{
+	NSLog(@"goodnight!");
 }
 
 @end
